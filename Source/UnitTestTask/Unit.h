@@ -3,10 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
 #include "Sound/SoundCue.h"
 #include "Sound/SoundNodeWavePlayer.h"
 #include "Sound/SoundWave.h"
-#include "GameFramework/Actor.h"
 #include "Unit.generated.h"
 
 UCLASS(Blueprintable)
@@ -22,15 +22,14 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UFUNCTION(BlueprintCallable)
-		USoundWave* GetRandomVoiceLine();
+	//UFUNCTION(BlueprintCallable)
+	USoundWave* GetRandomVoiceLine();
 
 	UFUNCTION(BlueprintCallable)
-		void OnUnitSelect(USoundWave* UnitVoiceLine);
+		void OnUnitSelect();
 
 	UFUNCTION(BlueprintCallable)
-		void OnUnitAction(USoundWave* UnitVoiceLine);
-
+		void OnUnitAction();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Unit")
 		TArray<USoundWave* > UnitVoiceLines;
